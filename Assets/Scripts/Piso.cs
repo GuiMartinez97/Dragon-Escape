@@ -5,7 +5,7 @@ using UnityEngine;
 public class Piso : MonoBehaviour
 {
     [SerializeField]
-    private float velocidade = 0.5f;
+    private float velocidade = 100.5f;
 
     private Vector3 posicaoInicial;
     private float tamanhoRealDaImagem;

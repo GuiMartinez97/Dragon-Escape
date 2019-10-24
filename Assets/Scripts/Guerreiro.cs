@@ -17,7 +17,7 @@ public class Guerreiro : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown("space"))
         {
             this.Impulsionar();
         }
