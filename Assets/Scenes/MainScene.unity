@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4034c5a0f89585743b42643bd2c0639d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoParaGerar: 5
+  TimeToGenerate: 2
   PointedObstacle: {fileID: 4595889368852105504, guid: 0fd0f24a382cc0545b64f1c26690b8ae,
     type: 3}
   OneBlockObstacle: {fileID: 629548792660880140, guid: 319142256badb4340890d66fbcc7e602,
@@ -1259,7 +1259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325bf63f2b1dae74899a329719d6ed1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forca: 5
+  Forca: 10
+  TimeToGenerate: 1
 --- !u!95 &1838918435
 Animator:
   serializedVersion: 3

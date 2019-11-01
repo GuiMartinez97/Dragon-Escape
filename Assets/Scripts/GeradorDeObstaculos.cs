@@ -5,8 +5,8 @@ using UnityEngine;
 public class GeradorDeObstaculos : MonoBehaviour
 {
     [SerializeField]
-    private float tempoParaGerar;
-    private float cronometro;
+    private float TimeToGenerate;
+    private float Timer;
     [SerializeField]
     private GameObject PointedObstacle;
     [SerializeField]
@@ -20,14 +20,14 @@ public class GeradorDeObstaculos : MonoBehaviour
 
     private void Awake()
     {
-        cronometro = this.tempoParaGerar;
+        Timer = TimeToGenerate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        cronometro -= Time.deltaTime;
-        if(cronometro < 0)
+        Timer -= Time.deltaTime;
+        if(Timer < 0)
         {
             int randomNumber = Random.Range(1, 4);
 
@@ -40,26 +40,23 @@ public class GeradorDeObstaculos : MonoBehaviour
                     }
                 case 2:
                     {
-                        //Instantiate(this.OneBlockObstacle, this.transform.position, Quaternion.identity);
                         InstantiateBlockObstacle(this.OneBlockObstacle, this.transform.position);
                         break;
                     }
                 case 3:
                     {
-                        //Instantiate(this.TwoBlockObstacle, this.transform.position, Quaternion.identity);
                         InstantiateBlockObstacle(this.TwoBlockObstacle, this.transform.position);
                         break;
                     }
                 case 4:
                     {
-                        //Instantiate(this.ThreeBlockObstacle, this.transform.position, Quaternion.identity);
                         InstantiateBlockObstacle(this.ThreeBlockObstacle, this.transform.position);
                         break;
                     }
             }
 
-            
-            cronometro = tempoParaGerar;
+
+            Timer = TimeToGenerate;
         }
     }
 
