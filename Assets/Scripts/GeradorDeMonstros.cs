@@ -7,6 +7,7 @@ public class GeradorDeMonstros : MonoBehaviour
     [SerializeField]
     private float tempoParaGerar;
     private float cronometro;
+    private float cronometroSpeed;
     [SerializeField]
     private GameObject Skeleton;
     [SerializeField]
@@ -16,6 +17,7 @@ public class GeradorDeMonstros : MonoBehaviour
     private void Awake()
     {
         cronometro = this.tempoParaGerar;
+        cronometroSpeed = 20;
     }
 
     // Start is called before the first frame update
@@ -27,7 +29,14 @@ public class GeradorDeMonstros : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cronometroSpeed -= Time.deltaTime;
         cronometro -= Time.deltaTime;
+        if (cronometroSpeed <= 0)
+        {
+            if (tempoParaGerar >= 1.5f)
+                tempoParaGerar -= 0.5f;
+            cronometroSpeed = 20;
+        }
         if (cronometro < 0)
         {
             int randomNumber = Random.Range(1, 3);
