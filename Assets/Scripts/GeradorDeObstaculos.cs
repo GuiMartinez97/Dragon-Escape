@@ -7,6 +7,7 @@ public class GeradorDeObstaculos : MonoBehaviour
     [SerializeField]
     private float TimeToGenerate;
     private float Timer;
+    private float cronometroSpeed;
     [SerializeField]
     private GameObject PointedObstacle;
     [SerializeField]
@@ -21,13 +22,23 @@ public class GeradorDeObstaculos : MonoBehaviour
     private void Awake()
     {
         Timer = TimeToGenerate;
+        Timer = 20;
     }
 
     // Update is called once per frame
     void Update()
     {
         Timer -= Time.deltaTime;
-        if(Timer < 0)
+        cronometroSpeed -= Time.deltaTime;
+        if (cronometroSpeed <= 0)
+        {
+
+            if (TimeToGenerate >= 1.5f)
+                TimeToGenerate  -= 0.5f;
+            cronometroSpeed = 20;
+        }
+
+        if (Timer < 0)
         {
             int randomNumber = Random.Range(1, 4);
 

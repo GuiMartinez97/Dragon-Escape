@@ -34,6 +34,8 @@ public class Guerreiro : MonoBehaviour
             ResetForceReducer();
             Timer = TimeToGenerate;
         }
+        if (this.transform.position.x <= -5)
+            Destroy(gameObject);
     }
 
     private void Impulsionar()
