@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,7 +36,11 @@ public class Guerreiro : MonoBehaviour
             Timer = TimeToGenerate;
         }
         if (this.transform.position.x <= -5)
+        {
             Destroy(gameObject);
+            RankingStaticClass.RankingDictionary.Add("Guilherme", RankingStaticClass.CurrentPoints);
+            Application.LoadLevel("Ranking");
+        }
     }
 
     private void Impulsionar()

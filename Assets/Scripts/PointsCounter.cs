@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,7 @@ public class PointsCounter : MonoBehaviour
     {
         double currentPoints = Convert.ToDouble(instruction.text);
         currentPoints += 0.01;
+        RankingStaticClass.CurrentPoints = currentPoints;
         instruction.text = currentPoints.ToString();
 
         cronometro = tempoParaGerar;
